@@ -7,11 +7,11 @@ import './styles/index.less'
 import Vant from 'vant'
 import 'vant/lib/index.css'
 // 注册使用Vant组件
-Vue.use(Vant)
+Vue.use(Vant);
 Vue.config.productionTip = false
 
 new Vue({
-  router,
-  store,
-  render: h => h(App)
+    router,
+    store,
+    render: h => h(App)
 }).$mount('#app')
