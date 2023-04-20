@@ -1,0 +1,65 @@
+<template>
+  <div class="channel-edit">
+    <van-cell center :border="false">
+        <div slot="title" class="channel-title">频道列表</div>
+        <van-button
+        type="danger"
+        size="mini"
+        round
+        plain
+        >编辑</van-button>
+    </van-cell>
+    <van-grid :gutter="10">
+        <van-grid-item 
+        class="grid-item"
+        v-for="value in 8" 
+        :key="value" 
+        text="文字" />
+    </van-grid>
+
+    <van-cell center :border="false">
+        <div slot="title" class="channel-title">频道推荐</div>
+    </van-cell>
+    <van-grid :gutter="10">
+        <van-grid-item 
+        class="grid-item"
+        v-for="(channel ,index) in userChannels" 
+        :key="index" 
+        :text="channel.name" />
+    </van-grid>
+  </div>
+</template>
+
+<script>
+export default {
+    name:'ChannelEdit',
+    props:{
+        userChannels:{
+            type:Array,
+            required:true
+        }
+    }
+}
+</script>
+
+<style lang="less" scoped>
+.channel-edit{
+    padding-top: 54px;
+    .channel-title{
+        font-size: 16px;
+        color: #333;
+    }
+    .grid-item{
+        width: 80px;
+        height: 43px;
+
+        /deep/ .van-grid-item__content {
+            background-color: #f4f5f6;
+            .van-grid-item__text{
+                color: #222;
+            }
+        }
+        
+    }
+}
+</style>
